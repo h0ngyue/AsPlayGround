@@ -2,13 +2,13 @@ package com.kikyo.textureview;
 
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.ScaleAnimation;
 
 import com.kikyo.helloopengles20.R;
 
@@ -33,8 +33,8 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
             @Override
             public void onClick(View v) {
                 ViewGroup.LayoutParams layoutParams = mTextureView.getLayoutParams();
-                layoutParams.width = 400;
-                layoutParams.height = 400;
+                layoutParams.width = mInitWidth;
+                layoutParams.height = mInitHeight;
                 mTextureView.setLayoutParams(layoutParams);
             }
         });
@@ -42,10 +42,21 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
         findViewById(R.id.mBtnZoomOut).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewGroup.LayoutParams layoutParams = mTextureView.getLayoutParams();
-                layoutParams.width = mInitWidth;
-                layoutParams.height = mInitHeight;
-                mTextureView.setLayoutParams(layoutParams);
+//                ViewGroup.LayoutParams layoutParams = mTextureView.getLayoutParams();
+//                layoutParams.width = 400;
+//                layoutParams.height = 400;
+//                mTextureView.setLayoutParams(layoutParams);
+                ScaleAnimation sa = new ScaleAnimation(1.0f, 0.5f, 1.0f, 0.5f);
+                sa.setFillAfter(true);
+                sa.setDuration(1000);
+                mTextureView.startAnimation(sa);
+//                mTextureView.startAnimation(AnimationUtils.loadAnimation(TextureCamera.this, R.anim.rotate_anim));
+            }
+        });
+        findViewById(R.id.mBtnOpenCamera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCamera(mTextureView.getSurfaceTexture());
             }
         });
 
@@ -62,6 +73,10 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
 
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
         Timber.d("onSurfaceTextureAvailable, width:%d, height:%d", width, height);
+//        openCamera(surface);
+    }
+
+    private void openCamera(SurfaceTexture surface) {
         mCamera = Camera.open();
 
         try {

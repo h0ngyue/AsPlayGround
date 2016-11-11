@@ -25,4 +25,11 @@
         android:layout_centerVertical="true"
         android:text="zoom out"
         android:layout_toRightOf="@id/mBtnZoomIn"/>
+    <Button
+        android:id="@+id/mBtnOpenCamera"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:text="open camera"
+        android:layout_toRightOf="@id/mBtnZoomOut"/>
 </RelativeLayout>
