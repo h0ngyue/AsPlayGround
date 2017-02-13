@@ -19,6 +19,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
+import android.opengl.GLES10;
 import android.opengl.GLES20;
 
 /**

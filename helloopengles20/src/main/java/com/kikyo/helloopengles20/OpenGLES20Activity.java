@@ -16,8 +16,10 @@
 package com.kikyo.helloopengles20;
 
 import android.app.Activity;
+import android.graphics.SurfaceTexture;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.TextureView;
 
 public class OpenGLES20Activity extends Activity {
 

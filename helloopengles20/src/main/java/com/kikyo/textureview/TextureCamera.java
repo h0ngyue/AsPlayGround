@@ -4,6 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +25,16 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_texture_camera);
         mTextureView = (TextureView) findViewById(R.id.mTxv);
         mTextureView.setSurfaceTextureListener(this);
+
+        findViewById(R.id.mBtnOpenCamera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCamera(mTextureView.getSurfaceTexture());
+            }
+        });
 
         findViewById(R.id.mBtnZoomIn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +49,7 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
         findViewById(R.id.mBtnZoomOut).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 //                ViewGroup.LayoutParams layoutParams = mTextureView.getLayoutParams();
 //                layoutParams.width = 400;
 //                layoutParams.height = 400;
@@ -53,13 +61,6 @@ public class TextureCamera extends FragmentActivity implements TextureView.Surfa
 //                mTextureView.startAnimation(AnimationUtils.loadAnimation(TextureCamera.this, R.anim.rotate_anim));
             }
         });
-        findViewById(R.id.mBtnOpenCamera).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCamera(mTextureView.getSurfaceTexture());
-            }
-        });
-
 
         mTextureView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
