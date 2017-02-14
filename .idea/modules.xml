@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AsPlayGround.iml" filepath="$PROJECT_DIR$/AsPlayGround.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/helloopengles20/helloopengles20.iml" filepath="$PROJECT_DIR$/helloopengles20/helloopengles20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AsPlayGround.iml" filepath="$PROJECT_DIR$/.idea/modules/AsPlayGround.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javalib/javalib.iml" filepath="$PROJECT_DIR$/.idea/modules/javalib/javalib.iml" />
     </modules>
   </component>
 </project>
