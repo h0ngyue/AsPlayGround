@@ -1,5 +1,6 @@
 package com.kikyo.asplayground;
 
+import com.github.h0ngyue.weaponlib.Test;
 import com.kikyo.asplayground.retrofit_demo.RetrofitTest;
 
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("method author:" + methodInfo.author());
                     System.out.println("method version:" + methodInfo.version());
                     System.out.println("method date:" + methodInfo.date());
+                    Test.testFunc();
                 }
             }
         } catch (ClassNotFoundException e) {
