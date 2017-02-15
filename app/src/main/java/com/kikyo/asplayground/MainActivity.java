@@ -1,19 +1,23 @@
 package com.kikyo.asplayground;
 
-import com.github.h0ngyue.weaponlib.Test;
+import com.github.h0ngyue.test_inject.DIActivity;
+import com.github.h0ngyue.test_inject.DIView;
 import com.kikyo.asplayground.retrofit_demo.RetrofitTest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import java.lang.reflect.Method;
 
-import retrofit2.http.GET;
-
+@DIActivity
 public class MainActivity extends AppCompatActivity {
 
     private boolean b;
+
+    @DIView( R.id.tvHello)
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("method author:" + methodInfo.author());
                     System.out.println("method version:" + methodInfo.version());
                     System.out.println("method date:" + methodInfo.date());
-                    Test.testFunc();
                 }
             }
         } catch (ClassNotFoundException e) {

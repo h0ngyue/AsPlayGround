@@ -1,2 +1,3 @@
-//include ':app', ':helloopengles20'
+include ':app'
+//include ':helloopengles20'
 include ':javalib'
