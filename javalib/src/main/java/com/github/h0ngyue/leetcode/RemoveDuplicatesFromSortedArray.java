@@ -6,4 +6,5 @@ package com.github.h0ngyue.leetcode;
 
 public class RemoveDuplicatesFromSortedArray {
 
+
 }
