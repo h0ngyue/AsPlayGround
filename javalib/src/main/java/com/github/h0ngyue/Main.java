@@ -1,5 +1,6 @@
 package com.github.h0ngyue;
 
+import com.github.h0ngyue.algorithm_home_work.AddBinaryNumber;
 import com.github.h0ngyue.leetcode.RemoveDuplicatesFromSortedArray;
 import com.github.h0ngyue.leetcode.TwoSum;
 import com.github.h0ngyue.leetcode.longestConsecutive;
@@ -12,5 +13,6 @@ public class Main {
 //        TwoSum.test();
 
 //        RemoveDuplicatesFromSortedArray.test();
+        AddBinaryNumber.test();
     }
 }
