@@ -11,7 +11,7 @@ public class RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         int id = 0;
         for (int n : nums) {
-            if (id < 2 || n > nums[id-2]) {
+            if (id < 2 || n > nums[id - 2]) {
                 nums[id++] = n;
             }
         }
