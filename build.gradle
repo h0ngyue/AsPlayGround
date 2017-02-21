@@ -6,7 +6,7 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+//        classpath 'com.android.tools.build:gradle:2.2.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -36,7 +36,6 @@ ext {
     buildToolsVersion = '24.0.2'
 
     targetSdkVersion = 24
-    // http://stackoverflow.com/questions/32346402/libavcodec-so-has-text-relocations
     androidSupportSdkVersion = '23.1.1'
 
     versionCode = 2
