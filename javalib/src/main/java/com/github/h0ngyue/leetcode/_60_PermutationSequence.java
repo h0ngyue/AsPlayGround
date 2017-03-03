@@ -30,7 +30,7 @@ public class _60_PermutationSequence {
 
     // 康托编码思路
     public static String kThSequence2(int n, int k) {
-        int kTmp = k - 1;
+        int kTmp = k-1 ;
         int[] indexs = new int[n];
         indexs[n - 1] = 0;
         for (int i = 0; i < n - 1; i++) {
